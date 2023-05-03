@@ -2,6 +2,7 @@ use std::result::Result;
 
 use fluent::{FluentArgs, FluentBundle, FluentError, FluentResource};
 
+#[derive(Default)]
 pub struct Locale {
     bundle: FluentBundle<FluentResource>,
 }
@@ -21,6 +22,14 @@ impl Locale {
         Ok(Locale { bundle })
     }
 
+    /**
+    This function will return localized string by message with apllied attribute and Fluent args if they provided.
+
+    # Arguments
+    * `message` - Fluent message. Make sure it is in your .ftl file that you provided to Locale struct.
+    * `attribute` - Fluent attribute. You can get attributed message if you specified this param else use `None`.
+    * `args` - Fluent args. If you don't wont any than pass empty array like this `&[]`.
+     */
     pub fn get_message(
         &self,
         message: impl Into<String>,
