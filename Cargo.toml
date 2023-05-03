@@ -2,6 +2,7 @@
 name = "personnel-locale"
 version = "0.1.1"
 edition = "2021"
+license = "MIT"
 license-file = "LICENSE"
 keywords = ["fluent-rs", "projectfluent", "locale", "localization", "localizer"]
 description = "Simple wrapper for fluent crate."
